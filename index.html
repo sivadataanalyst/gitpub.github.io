@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style >
+		body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+		/*open-button*/
+		.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  top: 23px;
+  left: 28px;
+  width: 280px;
+}
+		/* div chat-popup */
+		.chat-popup {
+  display:none ;
+  position: fixed;
+  top: 0;
+  left: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+		/* chat-container */
+		.chat-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #04AA6D;;}
+		/* input type text */
+		.chat-container input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 14px 22px 0;
+  border: none;
+  background: whitesmoke;
+  cursor: pointer; 
+}
+
+li {
+  list-style: none;
+}
+
+/* When the inputs get focus, do something */
+.chat-container input[type=text]:focus {
+  
+	  outline: none;}
+		/* close button */
+		.chat-container .btn {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+::placeholder {
+  color: black;
+  font-weight:bolder ;
+
+  opacity: 1; /* Firefox */
+}
+		/*hover effects*/
+		.chat-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+	</style>
+</head>
+<body>
+<button class="open-button" onclick="openForm()">Open </button>
+<div class="chat-popup" id="myChat">
+	<form action="/action_page.php" class="chat-container">
+		<h1>Chat Inbox</h1>
+		
+    <input type="text" placeholder ="Person1" name="Person1" readonly>
+		<input type="text" placeholder="Person2" name="Person2" readonly >
+		<input type="text" placeholder="Person3" name="Person3"readonly >
+		<input type="text" placeholder="Person4" name="Person4" readonly>
+	 <input type="text" placeholder="Person5"name="Person5" readonly>
+
+		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form></div>
+
+<script>
+	function openForm() {
+  document.getElementById("myChat").style.display = "block";
+
+}
+function closeForm() {
+  document.getElementById("myChat").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
